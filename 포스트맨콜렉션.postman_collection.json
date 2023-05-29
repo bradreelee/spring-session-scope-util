@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "6df5b4a1-84d6-4fe0-881c-7b7b32020861",
+		"name": "SessionScopeUtil 분석",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22841646"
+	},
+	"item": [
+		{
+			"name": "\b00 로그인 성공",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const cookieJar = pm.cookies.jar();",
+							"cookieJar.clear('localhost:8080', function (err) {",
+							"    if( err ) throw new Error('쿠키를 삭제하던 중에 에러가 발생했습니다.');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\": \"brad\"}"
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "\b00 로그인 실패",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const cookieJar = pm.cookies.jar();",
+							"cookieJar.clear('localhost:8080', function (err) {",
+							"    if( err ) throw new Error('쿠키를 삭제하던 중에 에러가 발생했습니다.');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\": \"brad\"}"
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
